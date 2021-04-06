@@ -1,2 +1,4 @@
-# MailChimp-mailing-list-update
-A script utilizing the MailChimp API to update subscribers.
+# MailChimp mailing list updater
+For a company using an email scraping system to update their mailing lists, it is important to have an automated way to remove unwanted keywords (such as do-not-reply emails)  in MailChimp. The process by hand may take hours; with the following script it will take minutes, if not seconds.
+
+There are two functions, called `subscribe()` and `unsubscribe()`. Each utilizes the `requests` module to either patch or post to the MailChimp API. Full documentation is provided. The script utilizes a Google Sheet named `Emails/domains`. The first worksheet in `Emails/domains` is called `Keywords`, and contains keywords whose presence in emails are grounds for removal from the current mailing list (such as `donotreply`). The second worksheet is called `Vendors`, and contains a list of keywords whose presence in emails are grounds for inclusion in a vendor email list (such as vendor domains).
