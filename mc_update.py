@@ -43,9 +43,9 @@ api_split_string = api_string.split('"')
 subscribers = [i for i in api_split_string if '@' in i]
 
 # Create unsubscribe list by iterating keywords over subscriber list
-unsubscribe = []
+unsubscribe_list = []
 for keyword in keywords:
-    unsubscribe += [email for email in subscribers if keyword in email]
+    unsubscribe_list += [email for email in subscribers if keyword in email]
 print(f'{len(unsubscribe)} emails to be removed.')
 
 # Create vendor subscribe list

@@ -8,7 +8,7 @@ def unsubscribe():
         }
     email_json = json.dumps(email_dict)
 
-    for email in unsubscribe:
+    for email in unsubscribe_list:
         global response
         hashed = hashlib.md5(email.encode()).hexdigest()
         response = requests.patch(api_link+NewList_endpoint+hashed,
