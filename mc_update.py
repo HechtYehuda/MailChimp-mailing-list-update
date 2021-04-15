@@ -1,19 +1,19 @@
-# Authenticate user credentials
-from google.colab import auth
-auth.authenticate_user()
-
 # API key and enpoints
 key = API_KEY
 NewListID = LIST_ENDPOINT_ID
 VendorListID = VENDOR_ENDPOINT_ID
 
 # Import modules
+from google.colab import auth
 import requests
 import json
 import hashlib
 import gspread
 from oauth2client.client import GoogleCredentials
 from mc_api_functions import subscribe, unsubscribe
+
+# Authenticate user credentials
+auth.authenticate_user()
 
 # Import data from Google sheets
 gc = gspread.authorize(GoogleCredentials.get_application_default())
